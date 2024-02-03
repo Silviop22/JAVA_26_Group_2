@@ -1,4 +1,15 @@
 package com.ECampus.repository;
 
-public interface ProfessorRepository {
+import com.ECampus.model.Professor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+
+public interface ProfessorRepository extends JpaRepository<Professor, Long> {
+
+    Optional<Professor> findByProfessorFirstName(String professorFirstName);
+    Optional<Professor> findByProfessorLastName(String professorLastName);
 }

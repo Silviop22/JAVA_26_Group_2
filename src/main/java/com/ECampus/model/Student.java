@@ -1,9 +1,6 @@
 package com.ECampus.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
@@ -13,16 +10,21 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "students")
 @Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int studentId;
+    private Long studentId;
+    @Column(unique = true, nullable = false)
     private String studentFirstName;
+    @Column(unique = true, nullable = false)
     private String studentLastName;
     private Date birthDate;
     private String email;
     private String address;
+
+
 
 
 }
