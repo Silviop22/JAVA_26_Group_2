@@ -29,7 +29,7 @@ public class Professor {
     private String professorEmail;
     private String professorAddress;
     @Column(name="classes")
-    private Coruse course;
+    private Course course;
 
 
 }
