@@ -9,17 +9,18 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="majors")
+@Table(name="group_nr")
 @Builder
 @Entity
-public class Major {
+public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long majorId;
-    private int studentQuota;
-    @OneToMany(mappedBy = "courseId")
-    private Set<Course> courses;
+    private Long groupId;
+    private int groupCapacity;
     @OneToMany(mappedBy = "studentId")
     private Set<Student> students;
+
+    @OneToMany(mappedBy = "calendarId")
+    private Set<Calendar> calendars;
 
 }

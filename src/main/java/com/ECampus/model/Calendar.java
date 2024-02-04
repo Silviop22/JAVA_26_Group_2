@@ -2,7 +2,12 @@ package com.ECampus.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.boot.autoconfigure.web.format.DateTimeFormatters;
+
+import java.time.LocalDateTime;
+import java.util.Set;
 
 
 @Getter
@@ -17,7 +22,19 @@ public class Calendar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long calendarId;
-    private DateTimeFormatters timeslot;
+    private LocalDateTime timeSlot;
+
+    @OneToMany(mappedBy = "hallId")
+    private Set<LectureHall> lectureHalls;
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Group group;
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Course course;
+
 
 
 }

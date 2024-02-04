@@ -1,13 +1,13 @@
 package com.ECampus.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Getter
 @Setter
@@ -18,6 +18,13 @@ import lombok.Setter;
 @Entity
 public class Presence {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int presenceId;
-    private int notPresent;
+    private int presence;
+    private boolean presenceStatus;
+    @JoinColumn(name = "student_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Student student;
+
+
 }
