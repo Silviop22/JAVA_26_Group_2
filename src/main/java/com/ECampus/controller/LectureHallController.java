@@ -1,7 +1,7 @@
 package com.ECampus.controller;
 
-import com.ECampus.model.ui.MajorDto;
-import com.ECampus.service.MajorService;
+import com.ECampus.model.ui.LectureHallDto;
+import com.ECampus.service.LectureHallService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/major")
-public class MajorController {
+@RequestMapping("/lectureHall")
+public class LectureHallController {
 
-    private final MajorService majorService;
+    private final LectureHallService lectureHallService;
 
-    @GetMapping("/{majorId}")
-    public ResponseEntity<MajorDto> getById(@PathVariable Long majorId) {
-        return ResponseEntity.ok(majorService.getById(majorId));
+    @GetMapping("/{hallId}")
+    public ResponseEntity<LectureHallDto> getById(@PathVariable Long hallId) {
+        return ResponseEntity.ok(lectureHallService.getById(hallId));
     }
-
-
 }

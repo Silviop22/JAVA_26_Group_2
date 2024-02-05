@@ -1,9 +1,9 @@
 package com.ECampus.repository;
 
-import com.ECampus.model.Course;
+import com.ECampus.model.Calendar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Course, Long> {
+public interface CalendarRepository extends JpaRepository<Calendar, Long> {
 }
