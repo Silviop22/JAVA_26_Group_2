@@ -1,11 +1,9 @@
 package com.ECampus.service;
 
 import com.ECampus.model.Course;
-import com.ECampus.model.ui.CalendarDto;
 import com.ECampus.model.ui.CourseDto;
 import com.ECampus.repository.CourseRepository;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.persistence.Id;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

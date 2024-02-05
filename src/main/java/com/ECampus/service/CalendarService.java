@@ -1,11 +1,8 @@
 package com.ECampus.service;
 
 import com.ECampus.model.Calendar;
-import com.ECampus.model.Major;
 import com.ECampus.model.ui.CalendarDto;
-import com.ECampus.model.ui.MajorDto;
 import com.ECampus.repository.CalendarRepository;
-import com.ECampus.repository.MajorRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
