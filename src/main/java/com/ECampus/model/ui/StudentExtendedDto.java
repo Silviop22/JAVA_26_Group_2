@@ -1,10 +1,16 @@
 package com.ECampus.model.ui;
 
+import com.ECampus.model.Attendance;
+import com.ECampus.model.Group;
+import com.ECampus.model.Major;
+import com.ECampus.model.Result;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -25,4 +31,5 @@ public class StudentExtendedDto {
         this.email = email;
         this.address = address;
     }
+
 }
