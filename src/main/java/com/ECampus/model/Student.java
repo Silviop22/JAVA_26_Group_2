@@ -33,8 +33,8 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
-    @OneToMany(mappedBy = "presenceId")
-    private Set<Presence> presences;
+    @OneToMany(mappedBy = "attendanceId")
+    private Set<Attendance> attendances;
     @OneToMany(mappedBy = "resultsId")
     private Set<Result> results;
 

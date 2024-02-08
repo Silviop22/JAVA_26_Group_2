@@ -19,4 +19,6 @@ public class MajorService {
         return new MajorDto(major.getMajorId(), major.getStudentQuota());
     }
 
+
+
 }

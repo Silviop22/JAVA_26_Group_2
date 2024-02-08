@@ -9,6 +9,8 @@ import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,12 +18,14 @@ import org.hibernate.annotations.OnDeleteAction;
 @Table(name="presences")
 @Builder
 @Entity
-public class Presence {
+public class Attendance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int presenceId;
-    private int presence;
+    private int attendanceId;
+    private int attendance;
+    private Date today;
     private boolean presenceStatus;
+    @ManyToOne
     @JoinColumn(name = "student_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Student student;
