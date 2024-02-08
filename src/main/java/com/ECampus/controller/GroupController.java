@@ -1,7 +1,7 @@
 package com.ECampus.controller;
 
-import com.ECampus.model.ui.MajorDto;
-import com.ECampus.service.MajorService;
+import com.ECampus.model.ui.GroupDto;
+import com.ECampus.service.GroupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/major")
-public class MajorController {
+@RequestMapping("/group")
+public class GroupController {
 
-    private final MajorService majorService;
+    private final GroupService groupService;
 
-    @GetMapping("/{majorId}")
-    public ResponseEntity<MajorDto> getById(@PathVariable Long majorId) {
-        return ResponseEntity.ok(majorService.getById(majorId));
+    @GetMapping("/{groupId}")
+    public ResponseEntity<GroupDto> getById(@PathVariable Long groupId) {
+        return ResponseEntity.ok(groupService.getById(groupId));
     }
 
 

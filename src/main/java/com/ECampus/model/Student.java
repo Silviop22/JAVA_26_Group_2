@@ -2,8 +2,11 @@ package com.ECampus.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,6 +26,18 @@ public class Student {
     private Date birthDate;
     private String email;
     private String address;
+    @ManyToOne
+    @JoinColumn(name = "major_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Major major;
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
+    @OneToMany(mappedBy = "presenceId")
+    private Set<Presence> presences;
+    @OneToMany(mappedBy = "resultsId")
+    private Set<Result> results;
+
 
 
 
