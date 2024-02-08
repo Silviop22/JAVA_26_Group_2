@@ -1,0 +1,82 @@
+[33mcommit 51e7f225b96ce6007c539f0e44e703402a01ee5f[m[33m ([m[1;36mHEAD -> [m[1;32mResults[m[33m, [m[1;32mdevelopment[m[33m)[m
+Author: AnxhelaBeja <140960726+AnxhelaBeja@users.noreply.github.com>
+Date:   Sun Feb 4 10:50:03 2024 +0100
+
+     just did the classes, the absences and the results
+
+[33mcommit 4fedaeef23fa59b44dc72d695b25c9f5f54fc32c[m[33m ([m[1;31morigin/development[m[33m)[m
+Merge: 41207ad 9249d11
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 14:39:05 2024 +0100
+
+    Merge pull request #4 from Silviop22/MajorCalendar
+    
+    Majors and Calendar classes
+
+[33mcommit 9249d1170f934f35e69436fa1dcf6ae94940da0b[m[33m ([m[1;31morigin/MajorCalendar[m[33m)[m
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 14:25:03 2024 +0100
+
+    Majors and Calendar classes
+
+[33mcommit 41207adc620b489c1001bfcccb5c752868f2300c[m
+Merge: bf43c3b a76f4e0
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 14:24:24 2024 +0100
+
+    Merge pull request #2 from Silviop22/LHCourse
+    
+    Course + Lecture Halls initial classes
+
+[33mcommit a76f4e0d97efc7879cbc61e7b7acd9341b3e82cb[m[33m ([m[1;31morigin/LHCourse[m[33m, [m[1;32mLHCourse[m[33m)[m
+Author: AnxhelaBeja <140960726+AnxhelaBeja@users.noreply.github.com>
+Date:   Sat Feb 3 14:16:59 2024 +0100
+
+    Course + Lecture Halls initial classes
+
+[33mcommit bf43c3b30233e2ab1781a84e00caf4f9955e15ff[m
+Merge: b14ed2e af7932a
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 13:56:07 2024 +0100
+
+    Merge pull request #1 from Silviop22/EC1
+    
+    Ec1
+
+[33mcommit af7932ae81583e4eead2c7ab8dfe6d639c9461c0[m[33m ([m[1;31morigin/EC1[m[33m, [m[1;32mEC1[m[33m)[m
+Merge: 7b90936 b14ed2e
+Author: AnxhelaBeja <140960726+AnxhelaBeja@users.noreply.github.com>
+Date:   Sat Feb 3 12:54:37 2024 +0100
+
+    Merge branch 'development' into EC1
+
+[33mcommit 7b9093608a315e14f5d8ee20c2844cd1b9666d9e[m
+Author: AnxhelaBeja <140960726+AnxhelaBeja@users.noreply.github.com>
+Date:   Sat Feb 3 12:27:14 2024 +0100
+
+    Professor model , application-dev.properties
+
+[33mcommit b14ed2e95bb70b1f3d96acf6a7de38821dfd7cc4[m
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 12:26:48 2024 +0100
+
+    Student model, Student repository, app.properties
+     Please enter the commit message for your changes. Lines starting
+
+[33mcommit 22b2d224b16a3724a65eb66979d2d7dcaea66305[m
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 11:42:25 2024 +0100
+
+    Add db connection
+
+[33mcommit 1016c1ad1bf55409b20059c89628a830f55f99f7[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Roen Naska <157956942+roennaska1999@users.noreply.github.com>
+Date:   Sat Feb 3 11:23:24 2024 +0100
+
+    Initial Commit
+
+[33mcommit 6d3c7e60f336e65af78fa4bb68a580dc2661656e[m
+Author: Silvio Progonati <silvioprogonati@gmail.com>
+Date:   Sun Jan 28 11:15:03 2024 +0100
+
+    Initial commit
