@@ -1,3 +1,5 @@
+package com.ECampus.front;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
