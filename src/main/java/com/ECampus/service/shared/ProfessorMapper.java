@@ -4,36 +4,38 @@ import com.ECampus.model.Professor;
 import com.ECampus.model.ui.ProfessorDto;
 import com.ECampus.model.ui.ProfessorExtendedDto;
 
-public class ProfessorMapper implements Mapper<ProfessorDto, ProfessorExtendedDto, Professor> {
+public class ProfessorMapper implements ExtendedMapper<ProfessorDto, ProfessorExtendedDto, Professor> {
 
     @Override
     public ProfessorDto toDto(Professor entity) {
         return ProfessorDto.builder()
-                .professorId(entity.getProfessorId())
-                .professorFirstName(entity.getProfessorFirstName())
-                .professorLastName(entity.getProfessorLastName())
+                .id(entity.getId())
+                .firstName(entity.getFirstName())
+                .lastName(entity.getLastName())
                 .build();
     }
 
+    @Override
     public ProfessorExtendedDto toExtendedDto(Professor entity) {
         return ProfessorExtendedDto.builder()
-                .professorId(entity.getProfessorId())
-                .professorFirstName(entity.getProfessorFirstName())
-                .professorLastName(entity.getProfessorLastName())
-                .professorBirthDate(entity.getProfessorBirthDate())
-                .professorEmail(entity.getProfessorEmail())
-                .professorAddress(entity.getProfessorAddress())
+                .id(entity.getId())
+                .firstName(entity.getFirstName())
+                .lastName(entity.getLastName())
+                .birthDate(entity.getBirthDate())
+                .email(entity.getEmail())
+                .address(entity.getAddress())
                 .build();
     }
 
+    @Override
     public Professor toEntity(ProfessorExtendedDto dto) {
         return new Professor().builder()
-                .professorId(dto.getProfessorId())
-                .professorFirstName(dto.getProfessorFirstName())
-                .professorLastName(dto.getProfessorLastName())
-                .professorBirthDate(dto.getProfessorBirthDate())
-                .professorEmail(dto.getProfessorEmail())
-                .professorAddress(dto.getProfessorAddress())
+                .id(dto.getId())
+                .firstName(dto.getFirstName())
+                .lastName(dto.getLastName())
+                .birthDate(dto.getBirthDate())
+                .email(dto.getEmail())
+                .address(dto.getAddress())
                 .build();
     }
 }

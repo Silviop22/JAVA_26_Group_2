@@ -10,13 +10,13 @@ import java.util.Date;
 @Getter
 @Setter
 public class StudentDto{
-    private Long studentId;
-    private String studentFirstName;
-    private String studentLastName;
+    private Long id;
+    private String firstName;
+    private String lastName;
 
-    public StudentDto(Long studentId, String studentFirstName, String studentLastName){
-        this.studentId = studentId;
-        this.studentFirstName = studentFirstName;
-        this.studentLastName = studentLastName;
+    public StudentDto(Long id, String firstName, String lastName){
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 }

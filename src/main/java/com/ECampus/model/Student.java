@@ -18,11 +18,11 @@ import java.util.Set;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long studentId;
+    private Long id;
     @Column(unique = true, nullable = false)
-    private String studentFirstName;
+    private String firstName;
     @Column(unique = true, nullable = false)
-    private String studentLastName;
+    private String lastName;
     private Date birthDate;
     private String email;
     private String address;

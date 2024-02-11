@@ -16,14 +16,14 @@ import java.util.Set;
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long professorId;
+    private Long id;
     @Column(unique = true, nullable = false)
-    private String professorFirstName;
+    private String firstName;
     @Column(unique = true, nullable = false)
-    private String professorLastName;
-    private Date professorBirthDate;
-    private String professorEmail;
-    private String professorAddress;
+    private String lastName;
+    private Date birthDate;
+    private String email;
+    private String address;
     @OneToMany(mappedBy = "courseId")
     private Set<Course> courses;
 
