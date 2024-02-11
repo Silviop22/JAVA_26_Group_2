@@ -37,9 +37,9 @@ public class ProfessorService {
     public ProfessorDto getById(Long id){
         Professor professor = professorRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Professor not found."));
-        return new ProfessorDto(professor.getProfessorId(),
-                professor.getProfessorFirstName(),
-                professor.getProfessorFirstName());
+        return new ProfessorDto(professor.getId(),
+                professor.getFirstName(),
+                professor.getLastName());
     }
 
 
@@ -57,11 +57,11 @@ public class ProfessorService {
 
     public Professor createProfessor(ProfessorExtendedDto professor) {
         Optional<Professor> existingProfessor = professorRepository.findByProfessorFirstNameAndProfessorLastNameAndProfessorEmail
-                (professor.getProfessorFirstName(), professor.getProfessorLastName(), professor.getProfessorEmail());
+                (professor.getFirstName(), professor.getLastName(), professor.getEmail());
         if (existingProfessor.isPresent()) {
-            throw new EntityExistsException("Professor with name " + professor.getProfessorFirstName() + " "
-                    + professor.getProfessorLastName()+", with email "
-                    + professor.getProfessorEmail() +" already exists.");
+            throw new EntityExistsException("Professor with name " + professor.getFirstName() + " "
+                    + professor.getLastName()+", with email "
+                    + professor.getEmail() +" already exists.");
         }
         return professorRepository.save(professorMapper.toEntity(professor));
     }

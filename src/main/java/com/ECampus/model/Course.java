@@ -33,6 +33,6 @@ public class Course {
     @JoinColumn(name = "professor_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Professor professor;
-    @OneToMany(mappedBy = "calendarId")
+    @OneToMany(mappedBy = "calendarId", cascade = CascadeType.ALL)
     private Set<Calendar> calendars;
 }

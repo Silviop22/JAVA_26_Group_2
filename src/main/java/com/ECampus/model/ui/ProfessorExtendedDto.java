@@ -12,20 +12,19 @@ import java.util.Date;
 @Builder
 public class ProfessorExtendedDto {
 
-    private Long professorId;
-    private String professorFirstName;
-    private String professorLastName;
-    private Date professorBirthDate;
-    private String professorEmail;
-    private String professorAddress;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private Date birthDate;
+    private String email;
+    private String address;
 
-    public ProfessorExtendedDto(Long professorId, String professorFirstName, String professorLastName,
-                                Date professorBirthDate, String professorEmail, String professorAddress){
-        this.professorId = professorId;
-        this.professorFirstName = professorFirstName;
-        this.professorLastName = professorLastName;
-        this.professorBirthDate = professorBirthDate;
-        this.professorEmail = professorEmail;
-        this.professorAddress = professorAddress;
+    public ProfessorExtendedDto(Long id, String firstName, String lastName, Date birthDate, String email, String address){
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.email = email;
+        this.address = address;
     }
 }

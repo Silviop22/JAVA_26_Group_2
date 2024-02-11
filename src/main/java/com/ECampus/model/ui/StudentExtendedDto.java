@@ -16,17 +16,17 @@ import java.util.Set;
 @Builder
 public class StudentExtendedDto {
 
-    private Long studentId;
-    private String studentFirstName;
-    private String studentLastName;
+    private Long id;
+    private String firstName;
+    private String lastName;
     private Date birthDate;
     private String email;
     private String address;
 
-    public StudentExtendedDto(Long studentId, String studentFirstName, String studentLastName, Date birthDate, String email, String address){
-        this.studentId = studentId;
-        this.studentFirstName = studentFirstName;
-        this.studentLastName = studentLastName;
+    public StudentExtendedDto(Long id, String firstName, String lastName, Date birthDate, String email, String address){
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthDate = birthDate;
         this.email = email;
         this.address = address;

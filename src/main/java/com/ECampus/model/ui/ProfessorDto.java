@@ -8,14 +8,14 @@ import lombok.Setter;
 @Setter
 @Builder
 public class ProfessorDto {
-    private Long professorId;
-    private String professorFirstName;
-    private String professorLastName;
+    private Long id;
+    private String firstName;
+    private String lastName;
 
-    public ProfessorDto(Long professorId, String professorFirstName, String professorLastName) {
-        this.professorId = professorId;
-        this.professorFirstName = professorFirstName;
-        this.professorLastName = professorLastName;
+    public ProfessorDto(Long id, String firstName, String lastName){
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
 }

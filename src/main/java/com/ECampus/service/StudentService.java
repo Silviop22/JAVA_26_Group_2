@@ -29,9 +29,9 @@ public class StudentService {
     public StudentDto getById(Long id) {
        Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Student not found."));
-        return new StudentDto(student.getStudentId(),
-                student.getStudentFirstName(),
-                student.getStudentLastName());
+        return new StudentDto(student.getId(),
+                student.getFirstName(),
+                student.getLastName());
     }
 
     public StudentExtendedDto getStudentById(Long id) {
@@ -48,11 +48,11 @@ public class StudentService {
 
     public Student createStudent(StudentExtendedDto student) {
         Optional<Student> existingStudent = studentRepository.findByStudentFirstNameAndStudentLastNameAndEmail
-                (student.getStudentFirstName(), student.getStudentFirstName(), student.getEmail());
+                (student.getFirstName(), student.getLastName(), student.getEmail());
         if (existingStudent.isPresent()) {
-            throw new EntityExistsException("Student with name " + student.getStudentFirstName() + " "
-                    + student.getStudentLastName()+", with email "
-                    + student.getBirthDate() +" already exists.");
+            throw new EntityExistsException("Student with name " + student.getFirstName() + " "
+                    + student.getLastName()+", with email "
+                    + student.getEmail() +" already exists.");
         }
         return studentRepository.save(studentMapper.toEntity(student));
     }

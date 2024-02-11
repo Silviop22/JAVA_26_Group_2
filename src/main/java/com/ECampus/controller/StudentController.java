@@ -36,7 +36,7 @@ public class StudentController {
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{studentId}")
-                .buildAndExpand(result.getStudentId())
+                .buildAndExpand(result.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
     }
