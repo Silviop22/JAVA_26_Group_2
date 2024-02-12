@@ -6,6 +6,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -35,8 +36,8 @@ public class Student {
     private Group group;
     @OneToMany(mappedBy = "attendanceId")
     private Set<Attendance> attendances;
-    @OneToMany(mappedBy = "resultsId")
-    private Set<Result> results;
+    @OneToMany(mappedBy = "resultsId",  cascade = CascadeType.ALL)
+    private List<Result> results;
 
 
 

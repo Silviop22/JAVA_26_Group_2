@@ -25,5 +25,7 @@ public class Result {
     @JoinColumn(name = "student_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Student student;
+    @OneToOne(mappedBy = "course_id")
+    private Course course;
 
 }
