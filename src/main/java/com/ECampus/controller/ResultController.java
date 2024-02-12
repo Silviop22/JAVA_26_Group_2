@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/result")
@@ -21,4 +23,9 @@ public class ResultController {
         return ResponseEntity.ok(resultService.getById(resultId));
     }
 
+    @GetMapping("/{studentId, courseId}")
+    public ResponseEntity<List<ResultDto>> getStudentResultListPerCourse
+            (@PathVariable Long studentId, Long courseId) {
+        return ResponseEntity.ok(resultService.getByStudentIdAndCourseId(studentId, courseId));
+    }
 }
