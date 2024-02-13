@@ -1,13 +1,18 @@
 package com.ECampus.controller;
 
+import com.ECampus.model.Student;
 import com.ECampus.model.ui.LectureHallDto;
+import com.ECampus.model.ui.StudentDto;
+import com.ECampus.model.ui.StudentExtendedDto;
 import com.ECampus.service.LectureHallService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,4 +25,6 @@ public class LectureHallController {
     public ResponseEntity<LectureHallDto> getById(@PathVariable Long hallId) {
         return ResponseEntity.ok(lectureHallService.getById(hallId));
     }
+
+
 }

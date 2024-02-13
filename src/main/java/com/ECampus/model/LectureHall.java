@@ -25,5 +25,5 @@ public class LectureHall {
     @ManyToOne
     @JoinColumn(name = "calendar_id")
     @OnDelete(action = OnDeleteAction.CASCADE)  //nuk supozohet qe te fshihen halls nqs anullohet nje orar
-    private LectureHall lectureHall;
+    private Calendar calendarId;
 }

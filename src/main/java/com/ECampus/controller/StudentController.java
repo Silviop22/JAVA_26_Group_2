@@ -27,6 +27,7 @@ public class StudentController {
 
     @GetMapping
     public ResponseEntity<Set<StudentDto>> getList() {
+
         return ResponseEntity.ok(studentService.getList());
     }
 
