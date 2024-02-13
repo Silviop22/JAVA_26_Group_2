@@ -24,6 +24,8 @@ public class StudentMapper implements ExtendedMapper<StudentDto, StudentExtended
                 .birthDate(entity.getBirthDate())
                 .email(entity.getEmail())
                 .address(entity.getAddress())
+                .group(entity.getGroup())
+                .major(entity.getMajor())
                 .build();
     }
 

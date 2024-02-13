@@ -22,14 +22,18 @@ public class StudentExtendedDto {
     private Date birthDate;
     private String email;
     private String address;
+    private Long groupId;
+    private Long majorId;
 
-    public StudentExtendedDto(Long id, String firstName, String lastName, Date birthDate, String email, String address){
+    public StudentExtendedDto(Long id, String firstName, String lastName, Date birthDate,
+                              String email, String address, Long groupId, Long majorId){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.email = email;
         this.address = address;
+        this.groupId = groupId;
+        this.majorId = majorId;
     }
-
 }
