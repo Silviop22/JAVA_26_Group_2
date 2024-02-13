@@ -6,7 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 public class MajorDto {
     private Long majorId;
     private int studentQuota;
