@@ -16,6 +16,7 @@ public class Major {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long majorId;
+    private MajorEnum majorName;
     private int studentQuota;
     @OneToMany(mappedBy = "courseId")
     private Set<Course> courses;

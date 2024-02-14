@@ -23,4 +23,6 @@ public class Group {
     @OneToMany(mappedBy = "calendarId")
     private Set<Calendar> calendars;
 
+
+
 }
