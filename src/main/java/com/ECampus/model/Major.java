@@ -1,5 +1,6 @@
 package com.ECampus.model;
 
+import com.ECampus.model.ui.MajorEnum;
 import jakarta.persistence.*;
 import lombok.*;
 

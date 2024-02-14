@@ -1,12 +1,12 @@
 package com.ECampus.model.ui;
 
-import com.ECampus.model.MajorEnum;
-import jakarta.persistence.Entity;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 public class MajorDto {
     private Long majorId;
     private MajorEnum majorName;

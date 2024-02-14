@@ -1,15 +1,10 @@
 package com.ECampus.service;
 
 import com.ECampus.model.Professor;
-import com.ECampus.model.Student;
 import com.ECampus.model.ui.ProfessorDto;
 import com.ECampus.model.ui.ProfessorExtendedDto;
-import com.ECampus.model.ui.StudentDto;
-import com.ECampus.model.ui.StudentExtendedDto;
 import com.ECampus.repository.ProfessorRepository;
-import com.ECampus.repository.StudentRepository;
-import com.ECampus.service.shared.ProfessorMapper;
-import com.ECampus.service.shared.StudentMapper;
+import com.ECampus.service.shared.ClassMappers.ProfessorMapper;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;

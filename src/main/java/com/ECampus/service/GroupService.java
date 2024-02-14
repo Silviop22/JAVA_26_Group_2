@@ -1,23 +1,16 @@
 package com.ECampus.service;
 
 import com.ECampus.model.Calendar;
-import com.ECampus.model.Course;
 import com.ECampus.model.Group;
-import com.ECampus.model.Student;
 import com.ECampus.model.ui.CalendarDto;
 import com.ECampus.model.ui.GroupDto;
-import com.ECampus.model.ui.StudentDto;
 import com.ECampus.repository.GroupRepository;
-import com.ECampus.service.shared.Mapper;
+import com.ECampus.service.shared.ClassMappers.GroupMapper;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -27,6 +20,7 @@ import java.util.stream.Collectors;
 public class GroupService {
 
     private final GroupRepository groupRepository;
+    private final GroupMapper groupMapper;
 
     public GroupDto getById(Long id) {
         Group group = groupRepository.findById(id)
@@ -39,12 +33,12 @@ public class GroupService {
                 .orElseThrow(() -> new EntityNotFoundException("Group with id " + id + " not found"));
     }
 
-//    public Set<GroupDto> getList() {
-//        return groupRepository.findAll()
-//                .stream()
-//                .map(groupMapper::toDto)
-//                .collect(Collectors.toSet());
-//    }
+    public Set<GroupDto> getList() {
+        return groupRepository.findAll()
+                .stream()
+                .map(groupMapper::toDto)
+                .collect(Collectors.toSet());
+    }
 
     public String addCalendar(Long id, CalendarDto calendarDto) {
         Group group = findExistingGroup(id);
