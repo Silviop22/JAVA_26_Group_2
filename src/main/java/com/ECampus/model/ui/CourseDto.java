@@ -11,10 +11,12 @@ public class CourseDto {
     private Long courseId;
     private String courseName;
     private float courseECTS;
+    private Long calendarId;
 
-    public CourseDto(Long courseId, String courseName, float courseECTS) {
+    public CourseDto(Long courseId, String courseName, float courseECTS, Long calendarId) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.courseECTS = courseECTS;
+        this.calendarId= calendarId;
     }
 }
