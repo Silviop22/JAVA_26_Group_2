@@ -1,5 +1,6 @@
 package com.ECampus.model;
 
+import com.ECampus.model.ui.Enrollment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,6 +34,8 @@ public class Course {
     @JoinColumn(name = "professor_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Professor professor;
+    @OneToMany(mappedBy = "enrollmentId")
+    private Set<Enrollment> enrollments;
     @OneToMany(mappedBy = "calendarId", cascade = CascadeType.ALL)
     private Set<Calendar> calendars;
 }

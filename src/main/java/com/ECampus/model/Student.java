@@ -1,5 +1,6 @@
 package com.ECampus.model;
 
+import com.ECampus.model.ui.Enrollment;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
@@ -36,6 +37,8 @@ public class Student {
     private Group group;
     @OneToMany(mappedBy = "attendanceId")
     private Set<Attendance> attendances;
+    @OneToMany(mappedBy = "enrollmentId")
+    private Set<Enrollment> enrollments;
     @OneToMany(mappedBy = "resultsId",  cascade = CascadeType.ALL)
     private List<Result> results;
 

@@ -1,19 +1,20 @@
 package com.ECampus.service;
 
 
+import com.ECampus.model.Course;
 import com.ECampus.model.Group;
 import com.ECampus.model.Major;
 import com.ECampus.model.Student;
+import com.ECampus.model.ui.Enrollment;
 import com.ECampus.model.ui.StudentDto;
 import com.ECampus.model.ui.StudentExtendedDto;
-import com.ECampus.repository.GroupRepository;
-import com.ECampus.repository.MajorRepository;
-import com.ECampus.repository.StudentRepository;
+import com.ECampus.repository.*;
 import com.ECampus.service.shared.ClassMappers.StudentMapper;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,11 @@ public class StudentService {
     @Autowired
     private MajorRepository majorRepository;
     @Autowired
+    private CourseRepository courseRepository;
+    @Autowired
     private GroupRepository groupRepository;
+    @Autowired
+    private EnrollmentRepository enrollmentRepository;
 
 
     private Student findExistingStudent(Long id) {
@@ -90,17 +95,39 @@ public class StudentService {
                 groupOptional.ifPresent(student::setGroup);
             }
 
-            studentRepository.save(student);
-
-            return ResponseEntity.ok("Student information updated successfully.");
+        return ResponseEntity.ok("Student information updated successfully.");
+    } else {
+            throw new EntityNotFoundException("Student with given id not found");
         }
-        return null;
-//        return ResponseEntity.ok("Student information updated successfully.");
-//    } else {
-//        throw new StudentNotFoundException("Student with id " + studentId + " not found");
-//    }
     }
+    public ResponseEntity<String> enrollStudentInCourse(Long studentId, Long courseId, Long majorId) {
+       Student student= findExistingStudent(studentId);
+        Optional<Course> courseOptional = courseRepository.findById(courseId);
+        Optional<Major> majorOptional = majorRepository.findById(majorId);
 
+        if (student.equals(true) && courseOptional.isPresent() && majorOptional.isPresent()) {
+            student.getId();
+            Course course = courseOptional.get();
+            Major major = majorOptional.get();
+
+            // Check if student belongs to the specified major
+            if (!student.getMajor().equals(major)) {
+                return ResponseEntity.badRequest().body("Student does not belong to the specified major.");
+            }
+
+            // Create a new enrollment
+            Enrollment enrollment = new Enrollment();
+            enrollment.setStudent(student);
+            enrollment.setCourse(course);
+
+            // Save the enrollment
+            enrollmentRepository.save(enrollment);
+
+            return ResponseEntity.ok("Student enrolled in course successfully.");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
 
