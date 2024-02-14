@@ -24,7 +24,7 @@ public class Attendance {
     private int attendanceId;
     private int attendance;
     private Date today;
-    private boolean presenceStatus;
+    private boolean presentStatus;
     @ManyToOne
     @JoinColumn(name = "student_id")
     @OnDelete(action = OnDeleteAction.CASCADE)

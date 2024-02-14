@@ -1,5 +1,12 @@
 package com.ECampus.model.ui;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
 public class CourseDto {
     private Long courseId;
     private String courseName;

@@ -1,14 +1,15 @@
-package com.ECampus.service.shared;
+package com.ECampus.service.shared.ClassMappers;
 
-import com.ECampus.model.Student;
-import com.ECampus.model.ui.StudentDto;
-import com.ECampus.model.ui.StudentExtendedDto;
+import com.ECampus.model.Professor;
+import com.ECampus.model.ui.ProfessorDto;
+import com.ECampus.model.ui.ProfessorExtendedDto;
+import com.ECampus.service.shared.ExtendedMapper;
 
-public class StudentMapper implements ExtendedMapper<StudentDto, StudentExtendedDto, Student> {
+public class ProfessorMapper implements ExtendedMapper<ProfessorDto, ProfessorExtendedDto, Professor> {
 
     @Override
-    public StudentDto toDto(Student entity) {
-        return StudentDto.builder()
+    public ProfessorDto toDto(Professor entity) {
+        return ProfessorDto.builder()
                 .id(entity.getId())
                 .firstName(entity.getFirstName())
                 .lastName(entity.getLastName())
@@ -16,22 +17,20 @@ public class StudentMapper implements ExtendedMapper<StudentDto, StudentExtended
     }
 
     @Override
-    public StudentExtendedDto toExtendedDto(Student entity) {
-        return StudentExtendedDto.builder()
+    public ProfessorExtendedDto toExtendedDto(Professor entity) {
+        return ProfessorExtendedDto.builder()
                 .id(entity.getId())
                 .firstName(entity.getFirstName())
                 .lastName(entity.getLastName())
                 .birthDate(entity.getBirthDate())
                 .email(entity.getEmail())
                 .address(entity.getAddress())
-                .groupId(entity.getGroup().getGroupId())
-                .majorId(entity.getMajor().getMajorId())
                 .build();
     }
 
     @Override
-    public Student toEntity(StudentExtendedDto dto) {
-        return new Student().builder()
+    public Professor toEntity(ProfessorExtendedDto dto) {
+        return new Professor().builder()
                 .id(dto.getId())
                 .firstName(dto.getFirstName())
                 .lastName(dto.getLastName())
@@ -40,5 +39,4 @@ public class StudentMapper implements ExtendedMapper<StudentDto, StudentExtended
                 .address(dto.getAddress())
                 .build();
     }
-
 }

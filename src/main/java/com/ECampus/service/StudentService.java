@@ -1,5 +1,6 @@
 package com.ECampus.service;
 
+
 import com.ECampus.model.Group;
 import com.ECampus.model.Major;
 import com.ECampus.model.Student;
@@ -8,7 +9,7 @@ import com.ECampus.model.ui.StudentExtendedDto;
 import com.ECampus.repository.GroupRepository;
 import com.ECampus.repository.MajorRepository;
 import com.ECampus.repository.StudentRepository;
-import com.ECampus.service.shared.StudentMapper;
+import com.ECampus.service.shared.ClassMappers.StudentMapper;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -100,9 +101,13 @@ public class StudentService {
 //    }
     }
 
+
+
+
     public void deleteStudent(Long id) {
         Student student = findExistingStudent(id);
         studentRepository.delete(student);
     }
+
 
 }

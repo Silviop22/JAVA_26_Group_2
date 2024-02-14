@@ -26,11 +26,11 @@ public class GroupController {
     public ResponseEntity<GroupDto> getById(@PathVariable Long groupId) {
         return ResponseEntity.ok(groupService.getById(groupId));
     }
-//    @GetMapping
-//    public ResponseEntity<Set<GroupDto>> getList() {
-//
-//        return ResponseEntity.ok(groupService.getList());
-//    }
+    @GetMapping("/{groupId}")
+    public ResponseEntity<Set<GroupDto>> getList() {
+
+        return ResponseEntity.ok(groupService.getList());
+    }
 //    @PostMapping
 //    public ResponseEntity<Object> createNewGroup(@Validated @RequestBody Group group) {
 //        Group result = groupService.createNewGroup(group);
