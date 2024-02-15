@@ -25,6 +25,15 @@ public class LectureHallController {
     public ResponseEntity<LectureHallDto> getById(@PathVariable Long hallId) {
         return ResponseEntity.ok(lectureHallService.getById(hallId));
     }
-
+//    @PostMapping
+//    public ResponseEntity<Object> createNewLectureHall(@Validated @RequestBody LectureHallDto lectureHall) {
+//        LectureHallDto result = lectureHallService.createLectureHall(lectureHall);
+//        URI location = ServletUriComponentsBuilder
+//                .fromCurrentRequest()
+//                .path("/{hallId}")
+//                .buildAndExpand(result.getHallId())
+//                .toUri();
+//        return ResponseEntity.created(location).build();
+//    }
 
 }
