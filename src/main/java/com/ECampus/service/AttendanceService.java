@@ -17,6 +17,6 @@ public class AttendanceService {
         Attendance attendance = attendanceRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Presence not found."));
         return new AttendanceDto(attendance.getAttendanceId(), attendance.getAttendance(),
-                attendance.isPresenceStatus(), attendance.getToday());
+                attendance.isPresentStatus(), attendance.getToday());
     }
 }
