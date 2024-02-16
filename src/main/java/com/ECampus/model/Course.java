@@ -35,7 +35,4 @@ public class Course {
     private Professor professor;
     @OneToMany(mappedBy = "calendarId", cascade = CascadeType.ALL)
     private Set<Calendar> calendars;
-    private  Calendar calendar;
-
-
 }

@@ -33,6 +33,4 @@ public class Calendar {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Course course;
 
-
-
 }

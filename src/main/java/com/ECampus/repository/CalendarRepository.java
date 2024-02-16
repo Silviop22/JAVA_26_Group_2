@@ -8,14 +8,17 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
 
 @Repository
 public interface CalendarRepository extends JpaRepository<Calendar, Long> {
 
     @Query("SELECT c from Calendar c WHERE c.course.courseId = :courseId")
-    List<Calendar> findCalendarsByCourse(Long courseId);
-    @Query("SELECT c FROM Calendar c JOIN c.course co WHERE co.department = :department")
-    List<Calendar> findAcademicCalendarByDepartment(@Param("department") String department);
+    Set<Calendar> findCalendarsByCourse(Long courseId);
+
+//    @Query("SELECT c FROM Calendar c JOIN c.course co WHERE co.department = :department")
+//    List<Calendar> findAcademicCalendarByDepartment(@Param("department") String department);
 
 
 }
