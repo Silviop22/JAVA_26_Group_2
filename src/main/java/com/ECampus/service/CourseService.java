@@ -12,8 +12,11 @@ import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
 @Getter
 @Setter
 @Service
@@ -23,9 +26,10 @@ public class CourseService {
     private final CourseRepository courseRepository;
     private final CalendarRepository calendarRepository;
 
-    public CourseDto getById(Long id){
+    public CourseDto getById(Long id) {
         Course course = findById(id);
-        return new CourseDto(course.getCourseId(), course.getCourseName(), course.getCourseECTS(), course.getCalendar().getCalendarId());
+        return new CourseDto(course.getCourseId(), course.getCourseName(),
+                course.getCourseECTS(), course.getCalendars());
     }
 
     public Course findById(Long id) {
@@ -52,20 +56,20 @@ public class CourseService {
       //  }
       //  return courseRepository.save(courseMapper.toEntity(courseDto));
     //}
-   public ResponseEntity<String> updateStudentInformation(Long courseId, CourseDto courseExtendedDto) {
+   public ResponseEntity<String> updateCourseInformation(Long courseId, CourseDto courseDto) {
        Optional<Course> courseOptional = courseRepository.findById(courseId);
 
        if (courseOptional.isPresent()) {
            Course course = courseOptional.get();
 
-           course.setCourseName(courseExtendedDto.getCourseName());
-           course.setCourseECTS(courseExtendedDto.getCourseECTS());
+           course.setCourseName(courseDto.getCourseName());
+           course.setCourseECTS(courseDto.getCourseECTS());
 
 
-           if (courseExtendedDto.getCalendarId() != null) {
+           if (course.getCalendars() != null) {
 
-               Optional<Calendar> calendarOptional = calendarRepository.findById(courseExtendedDto.getCalendarId());
-               calendarOptional.ifPresent(course::setCalendar);
+               Set<Calendar> calendars = calendarRepository.findCalendarsByCourse(courseId);
+               course.setCalendars(calendars);
            }
 
 
